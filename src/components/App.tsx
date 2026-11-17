@@ -20,10 +20,16 @@ export const App: React.FC = () => {
     return (
       <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-amber-500 animate-pulse flex items-center justify-center font-bold text-zinc-950 font-mono">
-            UPN
+          <img
+            src="/isotipo.png"
+            alt="Academy Space"
+            className="w-12 h-12 object-contain animate-pulse"
+          />
+          <div className="flex items-center text-sm font-black tracking-tight font-sans">
+            <span className="text-sky-400">Academy</span>
+            <span className="text-amber-400 ml-1">Space</span>
           </div>
-          <p className="text-xs font-mono text-zinc-500">Cargando Portal Curricular...</p>
+          <p className="text-xs font-mono text-zinc-500">Cargando Plan Curricular...</p>
         </div>
       </div>
     );
@@ -35,8 +41,42 @@ export const App: React.FC = () => {
       <div>
         <HeaderMetrics />
 
+        {/* Academic Program Sub-Header (Outside the header) */}
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-1">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-800/60">
+            <div>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <h1 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight font-sans">
+                  Plan Curricular
+                </h1>
+                <span className="px-2.5 py-0.5 text-xs font-mono font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                  Plan 2023 • 200 CR
+                </span>
+                <span className="px-2.5 py-0.5 text-xs font-mono font-medium rounded-full bg-zinc-900 text-zinc-400 border border-zinc-800">
+                  UPN
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                Facultad de Ingeniería •{' '}
+                <strong className="text-zinc-200 font-medium">
+                  Ingeniería de Sistemas Computacionales
+                </strong>
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono px-3 py-1 rounded-xl bg-zinc-900/80 border border-zinc-800 text-zinc-400">
+                Sede: <strong className="text-zinc-200">Lima Centro</strong>
+              </span>
+              <span className="text-xs font-mono px-3 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium">
+                Acreditación ABET
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* Dynamic Workspace Container */}
-        <main className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <main className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-5">
           {activeTab === 'malla' && <CurriculumGrid />}
           {activeTab === 'simulador' && <CyclePlanner />}
           {activeTab === 'arbol' && <PrerequisiteTree />}

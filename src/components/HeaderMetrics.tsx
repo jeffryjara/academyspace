@@ -68,23 +68,18 @@ export const HeaderMetrics: React.FC = () => {
       {/* Primary Brand & Navigation Tier */}
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
-          {/* Logo & Career Branding */}
-          <div className="flex items-center gap-3.5 min-w-max">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-glow text-zinc-950 font-black text-lg tracking-wider">
-              UPN
+          {/* Academy Space Logo & Brand */}
+          <div className="flex items-center gap-3 min-w-max">
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center bg-zinc-900/80 border border-zinc-800/80 shadow-md">
+              <img
+                src="/isotipo.png"
+                alt="Academy Space"
+                className="w-8 h-8 object-contain"
+              />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-zinc-100 tracking-tight text-sm sm:text-base">
-                  Portal Curricular
-                </span>
-                <span className="px-2 py-0.5 text-[11px] font-mono font-medium rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
-                  Plan 2023 • 200 CR
-                </span>
-              </div>
-              <p className="text-xs text-zinc-400 font-normal truncate max-w-[280px] sm:max-w-none">
-                {profile.career}
-              </p>
+            <div className="flex items-center text-lg sm:text-xl font-black tracking-tight font-sans select-none">
+              <span className="text-sky-400">Academy</span>
+              <span className="text-amber-400 ml-1.5">Space</span>
             </div>
           </div>
 
