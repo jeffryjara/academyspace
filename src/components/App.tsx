@@ -46,7 +46,7 @@ export const App: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-900">
             <div>
               <div className="flex items-center gap-2.5 flex-wrap">
-                <h1 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight font-sans">
+                <h1 className="text-xl sm:text-2xl font-bold font-display text-zinc-100 tracking-tight">
                   Plan Curricular
                 </h1>
                 <span className="px-2.5 py-0.5 text-xs font-mono font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">

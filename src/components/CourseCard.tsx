@@ -155,7 +155,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
       onClick={handleCardClick}
       onMouseEnter={() => setHoveredCourseId(course.id)}
       onMouseLeave={() => setHoveredCourseId(null)}
-      className={`group relative flex flex-col justify-between rounded-xl border p-3 cursor-pointer transition-all duration-200 backdrop-blur-md ${visuals.cardBg} ${visuals.accentBorder} ${chainHighlightClass}`}
+      className={`group relative flex flex-col justify-between rounded-2xl border p-3.5 sm:p-4 cursor-pointer transition-all duration-200 backdrop-blur-md ${visuals.cardBg} ${visuals.accentBorder} ${chainHighlightClass}`}
     >
       {/* Dependency Relationship Tag Tooltip */}
       {isAncestor && (
@@ -171,9 +171,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({
 
       {/* Top Header: Code, Modality, Status Icon */}
       <div>
-        <div className="flex items-center justify-between gap-1 mb-1.5">
-          <div className="flex items-center gap-1.5">
-            <span className="font-mono text-[11px] font-bold text-zinc-300 group-hover:text-amber-400 transition-colors">
+        <div className="flex items-center justify-between gap-1 mb-2">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs font-bold text-zinc-300 group-hover:text-amber-400 transition-colors tracking-tight">
               {course.id}
             </span>
             {getModalityBadge(course.mode)}
@@ -182,7 +182,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         </div>
 
         {/* Title */}
-        <h4 className="text-xs font-medium text-zinc-100 group-hover:text-white line-clamp-2 leading-snug">
+        <h4 className="font-display text-[13px] sm:text-sm font-medium text-zinc-100 group-hover:text-white line-clamp-2 leading-snug">
           {course.isElective && activeElective ? activeElective.name : course.name}
         </h4>
 
@@ -205,9 +205,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({
       </div>
 
       {/* Bottom Footer: Hours, Credits, Grade / Planner Button */}
-      <div className="mt-2.5 pt-2 border-t border-zinc-800/60 flex items-center justify-between gap-1 text-[11px]">
+      <div className="mt-3 pt-2.5 border-t border-zinc-800/60 flex items-center justify-between gap-1 text-xs">
         {/* Hours chip */}
-        <div className="font-mono text-[10px] text-zinc-400">
+        <div className="font-mono text-[11px] text-zinc-400">
           <span>HT:{course.ht}</span>
           <span className="mx-1 text-zinc-600">•</span>
           <span>HP:{course.hp}</span>
@@ -220,13 +220,13 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         </div>
 
         {/* Credits & Grade */}
-        <div className="flex items-center gap-1 font-mono">
-          <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 font-semibold text-[10px] border border-zinc-700/40">
+        <div className="flex items-center gap-1.5 font-mono">
+          <span className="px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 font-semibold text-[10px] border border-zinc-800">
             {course.credits} CR
           </span>
           {status === 'APROBADO' && typeof grade === 'number' && (
-            <span className="text-[10px] font-bold text-emerald-400 ml-0.5">
-              • Nota: {grade}
+            <span className="text-[11px] font-bold text-emerald-400">
+              • {grade}
             </span>
           )}
         </div>

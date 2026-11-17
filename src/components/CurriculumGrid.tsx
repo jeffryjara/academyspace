@@ -147,16 +147,17 @@ export const CurriculumGrid: React.FC = () => {
         </div>
 
         {/* Horizontal Navigation Quick Arrows */}
+        {/* Horizontal Navigation Quick Arrows */}
         <div className="hidden lg:flex items-center gap-1">
           <button
-            onClick={() => scrollHorizontally(-350)}
+            onClick={() => scrollHorizontally(-430)}
             className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors"
             title="Desplazar a la izquierda"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
-            onClick={() => scrollHorizontally(350)}
+            onClick={() => scrollHorizontally(430)}
             className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors"
             title="Desplazar a la derecha"
           >
@@ -181,10 +182,10 @@ export const CurriculumGrid: React.FC = () => {
         ))}
       </div>
 
-      {/* 10-Column Kanban Board */}
+      {/* 10-Column Kanban Board - Maximum 4 spaces visible across screen */}
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto pb-6 pt-1 scroll-smooth snap-x select-none"
+        className="flex gap-5 overflow-x-auto pb-6 pt-1 scroll-smooth snap-x select-none"
         style={{ scrollSnapType: 'x mandatory' }}
       >
         {cycles.map((cycleNum) => {
@@ -204,7 +205,7 @@ export const CurriculumGrid: React.FC = () => {
             <div
               key={cycleNum}
               id={`cycle-col-${cycleNum}`}
-              className="flex-shrink-0 w-[290px] sm:w-[310px] flex flex-col rounded-2xl glass-panel p-3 border border-zinc-800/80 snap-start"
+              className="flex-shrink-0 w-[350px] sm:w-[380px] md:w-[410px] lg:w-[430px] xl:w-[450px] flex flex-col rounded-2xl glass-panel p-4 border border-zinc-800/80 snap-start"
             >
               {/* Column Header */}
               <div className="pb-3 mb-3 border-b border-zinc-800/80">
@@ -219,7 +220,7 @@ export const CurriculumGrid: React.FC = () => {
                           : 'bg-zinc-700'
                       }`}
                     />
-                    <h3 className="font-bold text-sm tracking-wide text-zinc-100 font-mono">
+                    <h3 className="font-display font-semibold text-sm tracking-tight text-zinc-100">
                       CICLO {cycleNum < 10 ? `0${cycleNum}` : cycleNum}
                     </h3>
                   </div>

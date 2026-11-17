@@ -39,7 +39,7 @@ export const HeaderMetrics: React.FC = () => {
               alt="Academy Space"
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
             />
-            <div className="flex items-center text-lg sm:text-xl font-black tracking-tight font-sans">
+            <div className="flex items-center text-lg sm:text-xl font-bold tracking-tight font-display">
               <span className="text-sky-400">Academy</span>
               <span className="text-amber-400 ml-1.5">Space</span>
             </div>
@@ -53,7 +53,7 @@ export const HeaderMetrics: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`text-xs sm:text-sm transition-colors py-1 relative ${
+                  className={`text-xs sm:text-sm font-display transition-colors py-1 relative ${
                     isActive
                       ? 'text-zinc-100 font-semibold'
                       : 'text-zinc-400 hover:text-zinc-200 font-normal'
@@ -70,7 +70,7 @@ export const HeaderMetrics: React.FC = () => {
 
           {/* Student Profile: Name and Campus only */}
           <div className="text-right select-none min-w-max">
-            <div className="text-xs sm:text-sm font-semibold text-zinc-200 leading-tight">
+            <div className="text-xs sm:text-sm font-semibold font-display text-zinc-200 leading-tight">
               {profile.studentName}
             </div>
             <div className="text-[11px] text-zinc-400 leading-tight mt-0.5">
