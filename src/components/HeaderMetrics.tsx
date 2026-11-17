@@ -1,15 +1,9 @@
 import React from 'react';
 import {
   GraduationCap,
-  Sparkles,
   CalendarDays,
   GitBranch,
   FileCheck2,
-  Bell,
-  RotateCcw,
-  UserCheck,
-  CheckCircle2,
-  Clock,
   BookOpen,
   Award,
 } from 'lucide-react';
@@ -26,8 +20,6 @@ export const HeaderMetrics: React.FC = () => {
     getPlannedCredits,
     getPendingCredits,
     getWeightedAverage,
-    loadDefaultMockProfile,
-    resetAllProgress,
   } = usePlannerStore();
 
   const approvedCredits = getApprovedCredits();
@@ -115,53 +107,22 @@ export const HeaderMetrics: React.FC = () => {
             })}
           </nav>
 
-          {/* Profile & Fast Utility Actions */}
-          <div className="flex items-center gap-3">
-            {/* Quick Demo Preset Controls */}
-            <div className="hidden xl:flex items-center gap-1.5 text-xs text-zinc-400 border-r border-zinc-800 pr-3">
-              <button
-                onClick={loadDefaultMockProfile}
-                title="Cargar perfil de estudiante referencial (68 CR aprobados)"
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Perfil Demo (68 CR)</span>
-              </button>
-              <button
-                onClick={resetAllProgress}
-                title="Reiniciar todo a cero"
-                className="flex items-center gap-1 p-1 rounded-lg text-zinc-500 hover:text-rose-400 hover:bg-rose-950/20 transition-colors"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-              </button>
+          {/* Student Profile Pill */}
+          <div className="flex items-center gap-3 pl-1">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-inner">
+              CM
             </div>
-
-            {/* Notification Bell */}
-            <button
-              className="relative p-2 rounded-xl bg-zinc-900/60 border border-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors"
-              title="Notificaciones de Matrícula"
-            >
-              <Bell className="w-4 h-4" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-500" />
-            </button>
-
-            {/* Student User Pill */}
-            <div className="flex items-center gap-3 pl-1">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-inner">
-                CM
+            <div className="hidden sm:block text-left">
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs font-semibold text-zinc-200 leading-none">
+                  {profile.studentName}
+                </span>
+                <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/50">
+                  {profile.studentCode}
+                </span>
               </div>
-              <div className="hidden sm:block text-left">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xs font-semibold text-zinc-200 leading-none">
-                    {profile.studentName}
-                  </span>
-                  <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-zinc-800 text-zinc-400 border border-zinc-700/50">
-                    {profile.studentCode}
-                  </span>
-                </div>
-                <div className="text-[11px] text-zinc-500 leading-none mt-1">
-                  {profile.campus} • {profile.modality}
-                </div>
+              <div className="text-[11px] text-zinc-500 leading-none mt-1">
+                {profile.campus} • {profile.modality}
               </div>
             </div>
           </div>
