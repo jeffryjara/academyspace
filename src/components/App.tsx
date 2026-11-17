@@ -18,7 +18,7 @@ export const App: React.FC = () => {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
           <img
             src="/isotipo.png"
@@ -36,14 +36,14 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col justify-between selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen bg-black text-zinc-100 flex flex-col justify-between selection:bg-amber-500/30 selection:text-amber-200">
       {/* Top Header & Metrics Bar */}
       <div>
         <HeaderMetrics />
 
         {/* Academic Program Sub-Header (Outside the header) */}
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-1">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-800/60">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-900">
             <div>
               <div className="flex items-center gap-2.5 flex-wrap">
                 <h1 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight font-sans">
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
       <CourseDetailModal />
 
       {/* Corporate Academic Footer matching official portal mockup */}
-      <footer className="w-full border-t border-zinc-800/80 bg-zinc-950/80 py-6 px-4 sm:px-6 lg:px-8 text-xs text-zinc-500 mt-12">
+      <footer className="w-full border-t border-zinc-900 bg-black py-6 px-4 sm:px-6 lg:px-8 text-xs text-zinc-500 mt-12">
         <div className="max-w-[1920px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-center md:text-left">
             <span>© 2024 - 2026 Universidad Privada del Norte</span>
